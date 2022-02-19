@@ -19,7 +19,7 @@ nav ul li, footer ul li {
 
 .bg-img {
   /* The image used */
-  background-image: url(/Users/krystaltsoi/Desktop/mix-elangelo.github.io/Adam.jpeg);
+  background-image: url("https://github.com/mix-elangelo/mix-elangelo.github.io/blob/8b30e553b168958e1973ad2ea277fb948c303035/Adam.jpeg");
   min-height: 100px;
 
   /* Center and scale the image nicely */
