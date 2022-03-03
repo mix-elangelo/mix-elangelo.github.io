@@ -19,7 +19,7 @@ nav ul li, footer ul li {
 
 .bg-img {
 /* The image used */
-background-image: url("/static/Adam.jpeg");
+background-image: url("Adam.jpeg");
 min-height: 100px;
 
 /* Center and scale the image nicely */
@@ -219,7 +219,7 @@ input[type=text] {
   box-sizing: border-box;
   resize: none;
   text-align: center;
-  background-image: url('/Users/krystaltsoi/Desktop/mix-elangelo.github.io/Hashtag.png');
+  background-image: url('Hashtag.png');
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   background-size: 35px 35px;
