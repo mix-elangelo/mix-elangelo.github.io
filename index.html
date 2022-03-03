@@ -1,103 +1,150 @@
 <!DOCTYPE html>
 <html>
-	<!-- all the stuff from before i completely replace it with Raspberry Pi Code-->
 	<head>
 		<title>Mixelangelo</title>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css"> 
 	</head>
-	<body>
-		<div class="bg-img">
-			<div class="topnav">
-				<!--<img src="Adam.jpeg" class="img-fluid">-->
-				<a href="/">MIXELANGELO</a>
-			</div>	
+	<!-- <?php
+
+	?> -->
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	
+	<head>
+			<title>Mixelangelo</title>
+			<!-- link to main stylesheet -->
+			<link rel="stylesheet" type="text/css" href="static/main.css"> 
+		</head>
+		<body>
+			<div class="bg-img">
+				<div class="topnav">
+					<!--<img src="Adam.jpeg" class="img-fluid">-->
+					<a href="/">MIXELANGELO</a>
+				</div>	
+			</div>
+			<div class="container">
+				<div class="blurb">
+					<h1>Pick from these colors or input a hex code below!</h1>
+				</div><!-- /.blurb -->
+			</div><!-- /.container -->
+	
+			<div class = 'parent'>
+			<div class = 'child'>
+			<table id="matrix">
+				<tr>
+					<td><button class="button button1"  onclick="changeColor('#f44136')"> </button></td>
+					<td><button class="button button2"  onclick="changeColor('#ea1d63')"> </button></td>
+					<td><button class="button button3"  onclick="changeColor('#9d28b1')"> </button></td>
+					<td><button class="button button4"  onclick="changeColor('#683ab7')"> </button></td>
+				</tr>
+			  
+				<tr>
+					<td><button class="button button5"  onclick="changeColor('#3f51b5')"> </button></td>
+					<td><button class="button button6"  onclick="changeColor('#2197f3')"> </button></td>
+					<td><button class="button button7"  onclick="changeColor('#00bcd5')"> </button></td>
+					<td><button class="button button8"  onclick="changeColor('#009888')"> </button></td>
+				</tr>
+	
+				<tr>
+					<td><button class="button button9"   onclick="changeColor('#4bb14f')"> </button></td>
+					<td><button class="button button10"  onclick="changeColor('#8cc24b')"> </button></td>
+					<td><button class="button button11"  onclick="changeColor('#cddc39')"> </button></td>
+					<td><button class="button button12"  onclick="changeColor('#ffeb3d')"> </button></td>
+				</tr>
+	
+				<tr>
+					<td><button class="button button13"  onclick="changeColor('#fec009')"> </button></td>
+					<td><button class="button button14"  onclick="changeColor('#ff9800')"> </button></td>
+					<td><button class="button button15"  onclick="changeColor('#795647')"> </button></td>
+					<td><button class="button button16"  onclick="changeColor('#9e9e9e')"> </button></td>
+				</tr>
+			  </table>
+			</div>
+	
+			<div class = "box" id="box">
+				<!-- <input type = "button" id="colorButton" value = "Click to Show Color" onclick = "changeColor()"> -->
+				<script>
+					function changeColor(color){
+						var element = document.getElementById("box");
+						element.style.backgroundColor = color;				}
+				</script>  
+				<!-- <h3>HEX CODE: <?php echo $_GET["hex"];?><h3> -->
+	
+			</div>
 		</div>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Pick from these colors or input a hex code below!</h1>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-
-		<div class = 'parent'>
-		<div class = 'child'>
-		<table id="matrix">
-			<tr>
-				<td><button class="button button1"  onclick="changeColor('#f44136')"> </button></td>
-				<td><button class="button button2"  onclick="changeColor('#ea1d63')"> </button></td>
-				<td><button class="button button3"  onclick="changeColor('#9d28b1')"> </button></td>
-				<td><button class="button button4"  onclick="changeColor('#683ab7')"> </button></td>
-			</tr>
-		  
-			<tr>
-				<td><button class="button button5"  onclick="changeColor('#3f51b5')"> </button></td>
-				<td><button class="button button6"  onclick="changeColor('#2197f3')"> </button></td>
-				<td><button class="button button7"  onclick="changeColor('#00bcd5')"> </button></td>
-				<td><button class="button button8"  onclick="changeColor('#009888')"> </button></td>
-			</tr>
-
-			<tr>
-				<td><button class="button button9"   onclick="changeColor('#4bb14f')"> </button></td>
-				<td><button class="button button10"  onclick="changeColor('#8cc24b')"> </button></td>
-				<td><button class="button button11"  onclick="changeColor('#cddc39')"> </button></td>
-				<td><button class="button button12"  onclick="changeColor('#ffeb3d')"> </button></td>
-			</tr>
-
-			<tr>
-				<td><button class="button button13"  onclick="changeColor('#fec009')"> </button></td>
-				<td><button class="button button14"  onclick="changeColor('#ff9800')"> </button></td>
-				<td><button class="button button15"  onclick="changeColor('#795647')"> </button></td>
-				<td><button class="button button16"  onclick="changeColor('#9e9e9e')"> </button></td>
-			</tr>
-		  </table>
+			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
+				<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+				<button type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value);">Check Color</button> 
+				<!-- <input type="button" value = "Check Color" onclick=/> -->
+				
+				
+				<script> 
+				var color1 = hexCode.value;
+				$("#hexCode").bind('keyup', function(event){ 
+				if(event.keyCode == 13){ 
+					event.preventDefault();
+					//$("#buttonSrch").click(); 
+					search(hexCode.value);
+				}
+				});
+				// var wage = document.getElementById("hexCode");
+				// wage.addEventListener("keydown", function (e){
+				// 	if (e.key ==="Enter"){
+				// 		validate(e);
+				// 	}
+				// });
+				// function validate(e){
+				// 	var text = e.target.value;
+				// 	colorChange(text);
+				// }
+				</script>
+			<br>
+				
+					<div class="slidecontainer">
+		  <input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange" name="volume">
+		  <h4>Volume (mL): <span id="demo"></span></h4>
 		</div>
-
-		<div class = "box" id="box">
-			<!-- <input type = "button" id="colorButton" value = "Click to Show Color" onclick = "changeColor()"> -->
-			<script>
-				function changeColor(color){
-					var element = document.getElementById("box");
-					element.style.backgroundColor = color;				}
-			</script>  
-			<h3>HEX CODE: </h3>
-		</div>
-	</div>
-		<form action="#" id ="hexCodeBox">
-			<input type="text" id="hexCode" name="hex code"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
-			<button type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value);">Check Color</button> 
-			<!-- <input type="button" value = "Check Color" onclick=/> -->
-			<script> 
-			var color1 = hexCode.value;
-			$("#hexCode").bind('keyup', function(event){ 
-			if(event.keyCode == 13){ 
-				event.preventDefault();
-				//$("#buttonSrch").click(); 
-				search(hexCode.value);
-			}
-			});
-			// var wage = document.getElementById("hexCode");
-			// wage.addEventListener("keydown", function (e){
-			// 	if (e.key ==="Enter"){
-			// 		validate(e);
-			// 	}
-			// });
-			// function validate(e){
-			// 	var text = e.target.value;
-			// 	colorChange(text);
-			// }
-			</script>
-			<p id="hexCodeBox"><script>document.getElementById("greeting").innerHTML = "Bonjour";
-			</script></output>
-		  </form>
-
-		  <button class="btn-grad"> SUBMIT</button>
-
-
-<!-- <script id="hexCodeBox">
-document.write(document.getElementById("hexCode"));
-</script>	  insert submit button onclick= send info -->
-
-<!-- <script src="color.js"></script> --> 
-
-	</body>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<script>
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		output.innerHTML = slider.value;
+	
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+	
+		</script>
+		
+		<br>
+				
+				<input type="submit" class="btn-grad">
+				<!-- <?php 
+				$pop = $_GET['hex'];
+				$fp = fopen('/var/www/html/Values/hexcode.txt','w');
+				fwrite($fp,$pop);
+				fclose($fp);
+				
+				$pep = $_GET['volume'];
+				$fp = fopen('/var/www/html/Values/vol.txt','w');
+				fwrite($fp,$pep);
+				fclose($fp);
+				?> -->
+				<br> 	
+				<!--<p>HEX CODE: <?php echo $_GET["hex"];?><p>-->
+	
+	
+			  </form>			
+	
+	<!-- <script id="hexCodeBox">
+	document.write(document.getElementById("hexCode"));
+	</script>	  insert submit button onclick= send info -->
+	
+	<!-- <script src="color.js"></script> --> 
+	
+		</body>	
 </html>
