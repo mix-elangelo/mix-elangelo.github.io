@@ -2,7 +2,7 @@ body {
     margin: 20px auto;
     width: 70%;
     text-align: center; 
-    background-color: #ebe4ce; 
+    background-color: #F2E5D5;  /* ebe4ce */
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -19,7 +19,7 @@ nav ul li, footer ul li {
 
 .bg-img {
   /* The image used */
-  background-image: url("https://github.com/mix-elangelo/mix-elangelo.github.io/blob/8b30e553b168958e1973ad2ea277fb948c303035/Adam.jpeg");
+  background-image: url(/Users/krystaltsoi/Desktop/mix-elangelo.github.io/Adam.jpeg);
   min-height: 100px;
 
   /* Center and scale the image nicely */
@@ -40,34 +40,38 @@ nav ul li, footer ul li {
   font-weight: bold;
   display: inline-block;
   text-align: center;  
-  margin-top: 20px;
+  margin-top: 15px;
   width: 100%;
 }
 
 a {
     text-decoration: none;
-    color: #45583f;
+    color: #B27846; /*45583f */
     text-shadow: 2px 2px 4px #ffffff;
 
     font-size: 1.5em;
     text-align: center;  
-
 }
+
 /*a:hover {
     text-decoration: underline;
 }*/
 
+b {
+  margin-top:500px;
+  background: white;
+  color: black;
+}
+
+
 h1 {
     font-size: 2em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family:'Tacoma', 'Arial', 'Sans-Serif';
 }
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-
-
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -197,11 +201,109 @@ ul.posts li {
 
 
   #matrix {
-    margin: 0 auto;
+    margin: -30px auto;
+    margin-left: -65px;
     padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
   }
   
   #matrix tr, td {
     padding: 5px;
   }
+
+  input[type=text] {
+    width: 25%;
+    padding: 20px 20px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    resize: none;
+    text-align: center;
+    background-image: url('/Users/krystaltsoi/Desktop/mix-elangelo.github.io/Hashtag.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 1em;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+  }
   
+.box{
+  background-color: white;
+  width: 20%;
+  height: 180px;
+  border-color:  white;
+  border-style: solid;
+  border-width: 10px 10px 50px 10px; /* 20px top and bottom, 5px on the sides */
+  padding: 50px;
+  margin: auto;
+  align-self: center;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.parent {
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  padding: 3rem 3rem;
+  vertical-align: middle;
+}
+
+
+h3{
+  margin-top:245px;
+  margin-left:5px;
+  background: white;
+  color: black;
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+.btn-grad {
+   margin: -5px;
+   padding: 10px 60px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: inline-block;
+   border: none;
+   font-size: 35px;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+
+ .btn-grad-transparent {
+  margin: 20px;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #FF512F;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border-color: #FF512F;
+  background-color: #F2E5D5; 
+  display:inline-block;
+}
+
+.btn-grad-transparent:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #F09819;
+  text-decoration: none;
+}
