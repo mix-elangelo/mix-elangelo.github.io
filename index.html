@@ -11,13 +11,13 @@
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	
 	<head>
 			<title>Mixelangelo</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="static/main.css"> 
 		</head>
 		<body>
+			
 			<div class="bg-img">
 				<div class="topnav">
 					<!--<img src="Adam.jpeg" class="img-fluid">-->
@@ -76,6 +76,7 @@
 		</div>
 			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+				<br class="mobile-break">
 				<button type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value);">Check Color</button> 
 				<!-- <input type="button" value = "Check Color" onclick=/> -->
 				
