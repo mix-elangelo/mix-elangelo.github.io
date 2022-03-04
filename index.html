@@ -111,8 +111,11 @@
 				<!-- <input type = "button" id="colorButton" value = "Click to Show Color" onclick = "changeColor()"> -->
 				<script>
 					function changeColor(color){
+						var newColor = checkHash(color);
+						document.getElementsByName('hex')[0].value= newColor;
+
 						var element = document.getElementById("box");
-						element.style.backgroundColor = color;	
+						element.style.backgroundColor = newColor;	
 					}
 					function removeImage(){
 						var element = document.getElementById("box");
@@ -121,6 +124,16 @@
 					function insertHexCode(val){
 						document.getElementsByName('hex')[0].value= val;
 					}
+
+					function checkHash(val){
+						var hash ='#';
+						if (val.substr(0,1)!= "#"){
+							var newVal = hash.concat(val);
+							return newVal;
+						}
+						return val;
+					}
+
 				</script>  
 				<!-- <h3>HEX CODE: <?php echo $_GET["hex"];?><h3> -->
 	

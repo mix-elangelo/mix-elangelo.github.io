@@ -238,10 +238,10 @@ input[type=text] {
   box-sizing: border-box;
   resize: none;
   text-align: center;
-  background-image: url('Hashtag.png');
+  /* background-image: url('Hashtag.png');
   background-position: 10px 10px; 
   background-repeat: no-repeat;
-  background-size: 35px 35px;
+  background-size: 35px 35px; */
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   font-size: 1em;
   display: inline-block;
