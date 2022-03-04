@@ -68,7 +68,12 @@
 				<script>
 					function changeColor(color){
 						var element = document.getElementById("box");
-						element.style.backgroundColor = color;				}
+						element.style.backgroundColor = color;	
+					}
+					function removeImage(){
+						var element = document.getElementById("box");
+						element.style.backgroundImage = 'none';	
+						}
 				</script>  
 				<!-- <h3>HEX CODE: <?php echo $_GET["hex"];?><h3> -->
 	
@@ -77,7 +82,7 @@
 			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
-				<button type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value);">Check Color</button> 
+				<button type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value); removeImage();">Check Color</button> 
 				<!-- <input type="button" value = "Check Color" onclick=/> -->
 				
 				

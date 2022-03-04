@@ -244,8 +244,14 @@ margin: auto;
 align-self: center;
 display:inline-block;
 vertical-align: middle;
+background-image: url('cow.jpeg');
+background-size: 100%;
+background-repeat: no-repeat;
 }
 
+.box #no-background{
+  background-image: none;
+}
 .parent {
 text-align: center;
 }
