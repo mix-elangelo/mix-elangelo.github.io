@@ -6,6 +6,7 @@ body {
   text-align: center; 
   background-color: #F2E5D5;  /* ebe4ce */
 }
+
 nav ul, footer ul {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   padding: 0px;
@@ -53,6 +54,9 @@ a {
 
   font-size: 1.5em;
   text-align: center;  
+
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: 550;
 }
 
 /*a:hover {
@@ -68,9 +72,10 @@ color: black;
 
 h1 {
   font-size: 2em;
-  font-family:'Tacoma', 'Arial', 'Sans-Serif';
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
   max-width: 70%;
   display: inline-block;
+  font-weight: 200;
 }
 p {
   font-size: 1.5em;
@@ -290,7 +295,9 @@ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; fo
 h4{
 margin-top: 5px;
 color: black;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; 
+font-size: 1em;
+font-family:'Helvetica', 'Arial', 'Sans-Serif';
+font-weight: 200;
 }
 
 .btn-grad {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
@@ -307,6 +314,9 @@ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; fo
  display: inline-block;
  border: none;
  font-size: 35px;
+
+ font-family:'Helvetica', 'Arial', 'Sans-Serif';
+ font-weight: 300;
 }
 
 .btn-grad:hover {
@@ -332,6 +342,8 @@ display: block;
 border-color: #FF512F;
 background-color: #F2E5D5; 
 display:inline-block;
+font-family:'Helvetica', 'Arial', 'Sans-Serif';
+font-weight: 200;
 }
 
 .btn-grad-transparent:hover {
@@ -462,4 +474,9 @@ cursor: pointer;
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+#hexCode{
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: 200;
 }
