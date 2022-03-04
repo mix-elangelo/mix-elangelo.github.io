@@ -34,31 +34,31 @@
 			<div class = 'child'>
 			<table id="matrix">
 				<tr>
-					<td><button class="button button1"  onclick="changeColor('#f44136')"> </button></td>
-					<td><button class="button button2"  onclick="changeColor('#ea1d63')"> </button></td>
-					<td><button class="button button3"  onclick="changeColor('#9d28b1')"> </button></td>
-					<td><button class="button button4"  onclick="changeColor('#683ab7')"> </button></td>
+					<td><button class="button button1"  onclick="changeColor('#f44136'); removeImage(); insertHexCode('#f44136');"> </button></td>
+					<td><button class="button button2"  onclick="changeColor('#ea1d63'); removeImage()"> </button></td>
+					<td><button class="button button3"  onclick="changeColor('#9d28b1'); removeImage()"> </button></td>
+					<td><button class="button button4"  onclick="changeColor('#683ab7'); removeImage()"> </button></td>
 				</tr>
 			  
 				<tr>
-					<td><button class="button button5"  onclick="changeColor('#3f51b5')"> </button></td>
-					<td><button class="button button6"  onclick="changeColor('#2197f3')"> </button></td>
-					<td><button class="button button7"  onclick="changeColor('#00bcd5')"> </button></td>
-					<td><button class="button button8"  onclick="changeColor('#009888')"> </button></td>
+					<td><button class="button button5"  onclick="changeColor('#3f51b5'); removeImage()"> </button></td>
+					<td><button class="button button6"  onclick="changeColor('#2197f3'); removeImage()"> </button></td>
+					<td><button class="button button7"  onclick="changeColor('#00bcd5'); removeImage()"> </button></td>
+					<td><button class="button button8"  onclick="changeColor('#009888'); removeImage()"> </button></td>
 				</tr>
 	
 				<tr>
-					<td><button class="button button9"   onclick="changeColor('#4bb14f')"> </button></td>
-					<td><button class="button button10"  onclick="changeColor('#8cc24b')"> </button></td>
-					<td><button class="button button11"  onclick="changeColor('#cddc39')"> </button></td>
-					<td><button class="button button12"  onclick="changeColor('#ffeb3d')"> </button></td>
+					<td><button class="button button9"   onclick="changeColor('#4bb14f'); removeImage()"> </button></td>
+					<td><button class="button button10"  onclick="changeColor('#8cc24b'); removeImage()"> </button></td>
+					<td><button class="button button11"  onclick="changeColor('#cddc39'); removeImage()"> </button></td>
+					<td><button class="button button12"  onclick="changeColor('#ffeb3d'); removeImage()"> </button></td>
 				</tr>
 	
 				<tr>
-					<td><button class="button button13"  onclick="changeColor('#fec009')"> </button></td>
-					<td><button class="button button14"  onclick="changeColor('#ff9800')"> </button></td>
-					<td><button class="button button15"  onclick="changeColor('#795647')"> </button></td>
-					<td><button class="button button16"  onclick="changeColor('#9e9e9e')"> </button></td>
+					<td><button class="button button13"  onclick="changeColor('#fec009'); removeImage()"> </button></td>
+					<td><button class="button button14"  onclick="changeColor('#ff9800'); removeImage()"> </button></td>
+					<td><button class="button button15"  onclick="changeColor('#795647'); removeImage()"> </button></td>
+					<td><button class="button button16"  onclick="changeColor('#9e9e9e'); removeImage()"> </button></td>
 				</tr>
 			  </table>
 			</div>
@@ -74,6 +74,9 @@
 						var element = document.getElementById("box");
 						element.style.backgroundImage = 'none';	
 						}
+					function insertHexCode(val){
+						document.getElementsByName('hexCode')[0].value= val;
+					}
 				</script>  
 				<!-- <h3>HEX CODE: <?php echo $_GET["hex"];?><h3> -->
 	
