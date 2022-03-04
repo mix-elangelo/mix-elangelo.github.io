@@ -69,6 +69,8 @@ color: black;
 h1 {
   font-size: 2em;
   font-family:'Tacoma', 'Arial', 'Sans-Serif';
+  max-width: 70%;
+  display: inline-block;
 }
 p {
   font-size: 1.5em;
@@ -415,6 +417,14 @@ cursor: pointer;
     }
 }
 
+@media  screen and (max-width: 320px) {
+  /* This CSS will be applied only to phones and other small devices. */
+
+  .topnav {
+    font-size: 1.5em;
+    margin-top: 30px;
+    }
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -436,6 +446,7 @@ cursor: pointer;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  margin-top: 200px;
 }
 
 /* The Close Button */
