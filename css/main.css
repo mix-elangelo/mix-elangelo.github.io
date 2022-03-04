@@ -379,7 +379,16 @@ cursor: pointer;
       margin-top: 23px;
       }
 
-      #matrix{
-        margin-left: -25px;
-      }
+    #matrix {
+      margin-left: -25px;
+      margin: -20px;
+    }
+    
+    #matrix tr, td {
+      padding: 0px;
+    }
+    .button {
+      height: 60px;
+      width: 40px;
+    }
 }
