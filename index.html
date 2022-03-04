@@ -24,6 +24,50 @@
 					<a href="/">MIXELANGELO</a>
 				</div>	
 			</div>
+
+			<button id="help"  onclick="">?</button>
+
+			<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <p>Welcome to Mix-elangelo!</p>
+	  <h4>To use, please...</h4>
+	</div>
+  
+  </div>
+  
+  <script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("help");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+	modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+	modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+	if (event.target == modal) {
+	  modal.style.display = "none";
+	}
+  }
+  </script>
+  
+
 			<div class="container">
 				<div class="blurb">
 					<h1>Pick from these colors or input a hex code below!</h1>
@@ -153,7 +197,25 @@
 	document.write(document.getElementById("hexCode"));
 	</script>	  insert submit button onclick= send info -->
 	
-	<!-- <script src="color.js"></script> --> 
-	
+	<!-- <script src="color.js">
+	var r;
+	var g;
+	var b;
+	colornames = getColorArr('names');
+    for (i = 0; i < colornames.length; i++) {
+      if (c.toLowerCase() == colornames[i].toLowerCase()) {
+        colorhexs = getColorArr('hexs');
+        match = true;
+        rgb = {
+          r : parseInt(colorhexs[i].substr(0,2), 16),
+          g : parseInt(colorhexs[i].substr(2,2), 16),
+          b : parseInt(colorhexs[i].substr(4,2), 16)
+        };
+        break;
+      }
+	}
+	alert(r);
+	</script>  -->
+
 		</body>	
 </html>
