@@ -522,7 +522,7 @@ margin-top: 82px;
 {
      width:50px;
      height:300px;
-     background-color:#fff;
+     background-color:#b2b3b5;
      border:1px solid #ccc;
      position:relative;
      display: inline-block;
@@ -536,10 +536,26 @@ margin-top: 82px;
     width:100%;
     display:block;        
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    font-size: 12px;
-    background-color:#bb9319;
-    color:#fff;       
+    font-size: 14px;
+    color:#000000;       
     position:absolute;
     bottom:0;        
 }
+
+#cyan{
+  background-color:#00FFFF;
+}
+
+#magenta{
+  background-color: #FF00FF;
+}
+
+#yellow{
+  background-color: #FFFF00;
+}
+
+#white{
+  background-color: #FFFFFF;
+}
+
 
