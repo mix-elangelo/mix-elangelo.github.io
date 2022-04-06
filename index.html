@@ -5,17 +5,12 @@
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css"> 
 	</head>
-	<!-- <?php
 
-	?> -->
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
+	<!-- <head>
 			<title>Mixelangelo</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="static/main.css"> 
-		</head>
+			<!-link to main stylesheet -->
+			<!-- <link rel="stylesheet" type="text/css" href="static/main.css"> 
+		</head> -->
 		<body>
 			
 			<div class="bg-img">
@@ -25,49 +20,83 @@
 				</div>	
 			</div>
 
-			<button id="help"  onclick="">?</button>
+			<button class = "button" id="help"  onclick="">?</button>
+			
+			<button class = "button" id="history" onclick="">!</button>
 
-			<!-- The Modal -->
-<div id="myModal" class="modal">
+			<button class = "button" id="inkLevels" onclick="location.href='ink.html'"
+			>i</button>
 
-	<!-- Modal content -->
-	<div class="modal-content">
-	  <span class="close">&times;</span>
-	  <p>Welcome to Mixelangelo!</p>
-	  <h4>To use, please...</h4>
-	</div>
-  
-  </div>
-  
-  <script>
-  // Get the modal
-  var modal = document.getElementById("myModal");
-  
-  // Get the button that opens the modal
-  var btn = document.getElementById("help");
-  
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-	modal.style.display = "block";
-  }
-  
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-	modal.style.display = "none";
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-	if (event.target == modal) {
-	  modal.style.display = "none";
-	}
-  }
-  </script>
-  
 
+			<!-- Help Modal -->
+			<div id="helpModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+				<span id = "helpModal" class="close">&times;</span>
+				<p>Welcome to Mixelangelo!</p>
+				<h4>To use, please choose one of the 16 pre-picked colors or input a hex code. If you submit a hex code, 
+					 make sure to click on the "Check Color" button to ensure that's the color you want! When you have 
+					 chosen your desired color, decide how much paint you want mixed in that color. Then, hit submit and 
+					 wait for Mixelangelo to make your paint color!
+					 <br>
+					 <br>
+					 TIP: Click on the Palette icon to see past colors you have mixed!
+					
+					</h4>
+				</div>
+			</div>
+			<!-- Palette History Modal -->
+			<div id="histModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+				<span id = "histModal" class="close2">&times;</span>
+				<p>Palette History</p>
+				</div>
+			</div>
+			
+			<script>
+			// Get the modal
+			// var modal = document.getElementById("myModal");
+			// // Get the button that opens the modal
+			// var btn = document.getElementById("help");
+			// // When the user clicks the button, open the modal 
+			// btn.onclick = function() {
+			// 	modal.style.display = "block";}
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			var span2 = document.getElementsByClassName("close2")[0];
+			
+
+			document.getElementById("help").onclick = function() {
+				document.getElementById("helpModal").style.display = "block";
+			}
+
+			document.getElementById("history").onclick = function() {
+				document.getElementById("histModal").style.display = "block";
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+				document.getElementById("helpModal").style.display = "none";
+				document.getElementById("histModal").style.display = "none"; //DOESNT WORK STILL
+			}
+
+			span2.onclick = function() {
+				document.getElementById("histModal").style.display = "none"; //DOESNT WORK STILL
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == document.getElementById("helpModal")) {
+					document.getElementById("helpModal").style.display = "none";
+				}
+				if (event.target == document.getElementById("histModal")) {
+					document.getElementById("histModal").style.display = "none";
+				}
+			}
+
+			</script>
 			<div class="container">
 				<div class="blurb">
 					<h1>Pick from these colors or input a hex code below!</h1>
@@ -142,33 +171,20 @@
 			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
-				<button type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value); removeImage();">Check Color</button> 
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value); removeImage();">Check Color</button> 
 				<!-- <input type="button" value = "Check Color" onclick=/> -->
 				
-				
-				<script> 
-				var color1 = hexCode.value;
-				$("#hexCode").bind('keyup', function(event){ 
-				if(event.keyCode == 13){ 
+				<!-- <script> 
+				// Make sure this code gets executed after the DOM is loaded.
+				document.getElementById(hexCode).addEventListener("keyup", event => {
+					if(event.key !== "Return") return; // Use `.key` instead.
+					document.getElementById(checkColor).click(); // Things you want to do.
 					event.preventDefault();
-					//$("#buttonSrch").click(); 
-					search(hexCode.value);
-				}
-				});
-				// var wage = document.getElementById("hexCode");
-				// wage.addEventListener("keydown", function (e){
-				// 	if (e.key ==="Enter"){
-				// 		validate(e);
-				// 	}
-				// });
-				// function validate(e){
-				// 	var text = e.target.value;
-				// 	colorChange(text);
-				// }
-				</script>
+				});	
+				</script> -->
 			<br>
 				
-					<div class="slidecontainer">
+		<div class="slidecontainer">
 		  <input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange" name="volume">
 		  <h4>Volume (mL): <span id="demo"></span></h4>
 		</div>
@@ -206,10 +222,7 @@
 	
 			  </form>			
 	
-	<!-- <script id="hexCodeBox">
-	document.write(document.getElementById("hexCode"));
-	</script>	  insert submit button onclick= send info -->
-	
+
 	<!-- <script src="color.js">
 	var r;
 	var g;

@@ -109,107 +109,77 @@ ul.posts li {
   width: 80px;
   border-radius: 50%;
 }
+.button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
 .button1 {
   background-color: #f44136; 
-}
-.button1:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .button2 {
   background-color: #ea1d63; 
 }
-.button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
 .button3 {
   background-color: #9d28b1; 
 }
-.button3:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button4 {
   background-color: #683ab7; 
 }
-.button4:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button5 {
   background-color: #3f51b5; 
 }
-.button5:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button6 {
   background-color: #2197f3; 
 }
-.button6:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button7 {
   background-color: #00bcd5; 
 }
-.button7:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button8 {
   background-color: #009888; 
 }
-.button8:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button9 {
   background-color: #4bb14f; 
 }
-.button9:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button10 {
   background-color: #8cc24b; 
 }
-.button10:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button11 {
   background-color: #cddc39; 
 }
-.button11:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button12 {
   background-color: #ffeb3d; 
 }
-.button12:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button13 {
   background-color: #fec009; 
 }
-.button13:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+ 
 .button14 {
   background-color: #ff9800; 
 }
-.button14:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button15 {
   background-color: #795647; 
 }
-.button15:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .button16 {
   background-color: #9e9e9e; 
 }
-.button16:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 
 #help {
-  background-color: #F09819; /* Green */
+  background-color: #F09819;
   border: none;
   color: white;
   padding: 4px 4px;
@@ -222,6 +192,54 @@ ul.posts li {
   border-radius: 50%;
   position: absolute;
   margin-top: 10px;
+}
+
+#home {
+  background-color: #F09819;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align:center;
+  text-decoration: none;
+  left: 10px;
+  font-size: 16px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 10px;
+}
+
+#history {
+  background-color: #F09819;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align:center;
+  text-decoration: none;
+  left: 10px;
+  font-size: 16px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 45px;
+}
+
+#inkLevels {
+  background-color: #F09819;
+  border: none;
+  color: white;
+  padding: 4px 4px;
+  text-align:center;
+  text-decoration: none;
+  left: 10px;
+  font-size: 16px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 80px;
 }
 
 #matrix {
@@ -458,9 +476,15 @@ cursor: pointer;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
+#histModal .modal-content {
+width: 25%;
+margin-left: 23%;
+height: 40%;
+margin-top: 82px;
+}
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -476,7 +500,46 @@ cursor: pointer;
   cursor: pointer;
 }
 
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #hexCode{
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   font-weight: 200;
 }
+.loadbar
+{
+     width:50px;
+     height:300px;
+     background-color:#fff;
+     border:1px solid #ccc;
+     position:relative;
+     display: inline-block;
+     margin-top: 10%;
+     margin-right:4%;
+     margin-left:4%;
+    }
+      
+.bar
+{
+    width:100%;
+    display:block;        
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 12px;
+    background-color:#bb9319;
+    color:#fff;       
+    position:absolute;
+    bottom:0;        
+}
+
