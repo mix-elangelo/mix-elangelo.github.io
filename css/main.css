@@ -177,6 +177,13 @@ ul.posts li {
   background-color: #9e9e9e; 
 }
 
+.button17 {
+  background-color: #ffffff;
+  border: 2px solid #795647;
+  height: 68px;
+  width: 60px;
+}
+
 
 #help {
   background-color: #F09819;
@@ -232,7 +239,6 @@ ul.posts li {
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 #inkLevels {
@@ -491,8 +497,8 @@ cursor: pointer;
 #histModal .modal-content {
 width: 25%;
 margin-left: 23%;
-height: 40%;
-margin-top: 82px;
+height: 42.5%;
+margin-top: 76px;
 }
 /* The Close Button */
 .close {
@@ -566,5 +572,4 @@ margin-top: 82px;
 #white{
   background-color: #FFFFFF;
 }
-
 
