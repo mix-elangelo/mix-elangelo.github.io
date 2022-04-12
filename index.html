@@ -90,31 +90,31 @@
 			<div class = 'child'>
 			<table id="matrix">
 				<tr>
-					<td><button class="button button1"  onclick="changeColor('#f44136'); removeImage(); insertHexCode('#f44136');"> </button></td>
-					<td><button class="button button2"  onclick="changeColor('#ea1d63'); removeImage(); insertHexCode('#ea1d63');"> </button></td>
-					<td><button class="button button3"  onclick="changeColor('#9d28b1'); removeImage(); insertHexCode('#9d28b1');"> </button></td>
-					<td><button class="button button4"  onclick="changeColor('#683ab7'); removeImage(); insertHexCode('#683ab7');"> </button></td>
+					<td><button class="button button1"  onclick="changeColor('#f44136'); removeImage(); insertHexCode('#f44136'); convertToCMYK('#f44136');"> </button></td>
+					<td><button class="button button2"  onclick="changeColor('#ea1d63'); removeImage(); insertHexCode('#ea1d63'); convertToCMYK('#ea1d63');"> </button></td>
+					<td><button class="button button3"  onclick="changeColor('#9d28b1'); removeImage(); insertHexCode('#9d28b1'); convertToCMYK('#9d28b1');"> </button></td>
+					<td><button class="button button4"  onclick="changeColor('#683ab7'); removeImage(); insertHexCode('#683ab7'); convertToCMYK('#683ab7');"> </button></td>
 				</tr>
 			  
 				<tr>
-					<td><button class="button button5"  onclick="changeColor('#3f51b5'); removeImage(); insertHexCode('#3f51b5');"> </button></td>
-					<td><button class="button button6"  onclick="changeColor('#2197f3'); removeImage(); insertHexCode('#2197f3');"> </button></td>
-					<td><button class="button button7"  onclick="changeColor('#00bcd5'); removeImage(); insertHexCode('#00bcd5');"> </button></td>
-					<td><button class="button button8"  onclick="changeColor('#009888'); removeImage(); insertHexCode('#009888');"> </button></td>
+					<td><button class="button button5"  onclick="changeColor('#3f51b5'); removeImage(); insertHexCode('#3f51b5'); convertToCMYK('#3f51b5');"> </button></td>
+					<td><button class="button button6"  onclick="changeColor('#2197f3'); removeImage(); insertHexCode('#2197f3'); convertToCMYK('#2197f3');"> </button></td>
+					<td><button class="button button7"  onclick="changeColor('#00bcd5'); removeImage(); insertHexCode('#00bcd5'); convertToCMYK('#00bcd5');"> </button></td>
+					<td><button class="button button8"  onclick="changeColor('#009888'); removeImage(); insertHexCode('#009888'); convertToCMYK('#009888');"> </button></td>
 				</tr>
 	
 				<tr>
-					<td><button class="button button9"   onclick="changeColor('#4bb14f'); removeImage(); insertHexCode('#4bb14f');"> </button></td>
-					<td><button class="button button10"  onclick="changeColor('#8cc24b'); removeImage(); insertHexCode('#8cc24b');"> </button></td>
-					<td><button class="button button11"  onclick="changeColor('#cddc39'); removeImage(); insertHexCode('#cddc39');"> </button></td>
-					<td><button class="button button12"  onclick="changeColor('#ffeb3d'); removeImage(); insertHexCode('#ffeb3d');"> </button></td>
+					<td><button class="button button9"   onclick="changeColor('#4bb14f'); removeImage(); insertHexCode('#4bb14f'); convertToCMYK('#4bb14f');"> </button></td>
+					<td><button class="button button10"  onclick="changeColor('#8cc24b'); removeImage(); insertHexCode('#8cc24b'); convertToCMYK('#8cc24b');"> </button></td>
+					<td><button class="button button11"  onclick="changeColor('#cddc39'); removeImage(); insertHexCode('#cddc39'); convertToCMYK('#cddc39');"> </button></td>
+					<td><button class="button button12"  onclick="changeColor('#ffeb3d'); removeImage(); insertHexCode('#ffeb3d'); convertToCMYK('#ffeb3d');"> </button></td>
 				</tr>
 	
 				<tr>
-					<td><button class="button button13"  onclick="changeColor('#fec009'); removeImage(); insertHexCode('#fec009');"> </button></td>
-					<td><button class="button button14"  onclick="changeColor('#ff9800'); removeImage(); insertHexCode('#ff9800');"> </button></td>
-					<td><button class="button button15"  onclick="changeColor('#795647'); removeImage(); insertHexCode('#795647');"> </button></td>
-					<td><button class="button button16"  onclick="changeColor('#9e9e9e'); removeImage(); insertHexCode('#9e9e9e');"> </button></td>
+					<td><button class="button button13"  onclick="changeColor('#fec009'); removeImage(); insertHexCode('#fec009'); convertToCMYK('#fec009');"> </button></td>
+					<td><button class="button button14"  onclick="changeColor('#ff9800'); removeImage(); insertHexCode('#ff9800'); convertToCMYK('#ff9800');"> </button></td>
+					<td><button class="button button15"  onclick="changeColor('#795647'); removeImage(); insertHexCode('#795647'); convertToCMYK('#795647');"> </button></td>
+					<td><button class="button button16"  onclick="changeColor('#9e9e9e'); removeImage(); insertHexCode('#9e9e9e'); convertToCMYK('#9e9e9e');"> </button></td>
 				</tr>
 			  </table>
 			</div>
@@ -139,7 +139,11 @@
 		<br>
 
 		<div>
-		<h4 id="cmykDisplay">CMYK: </h4>
+		<h4 id="cmyk01"></h4>
+		<!-- <h4 id="c"></h4>
+		<h4 id="m"></h4>
+		<h4 id="y"></h4>
+		<h4 id="k"></h4> -->
 		</div>
 				
 		<div class="slidecontainer">
@@ -153,7 +157,7 @@
 				
 							<!--changed type="submit" to-->
 
-				<button type = "button" class="btn-grad" onclick="" id="submitButton">SUBMIT</button>
+				<button type = "button" class="btn-grad" onclick="hitSubmit();" id="submitButton">SUBMIT</button>
 				<!-- <input type="submit" class="btn-grad" onclick="" id="submitButton"> before of this^-->
 
 				
@@ -177,27 +181,44 @@
 						<div class="modal-content">
 						<span id = "startModal" class="close3">&times;</span>
 						<p>Make sure your hands are clear of the machine, then press start!</p>
+						<h4 id="startMyVol"></h4>
 						<h4>
 							<br>
-							HEX CODE:
+							HEX CODE: <span id="startHex"></span>
 							<br>
 							<br>
-							CMYK:
+							CMYK: <span id="startCmyk01"></span>
 							<br>
 							<br>
-							VOLUME:
+							VOLUME: <span id="startMyVol"></span>
 							<br>
 							<br>
 						</h4>
-						<button type = "button" class="btn-grad2" onclick="" id="startButton">START</button>
-
+						<button type = "button" class="btn-grad2" onclick="" id="startButton" onclick="closeModalWhenStartClicked()">START</button>
 						</div>
 					</div>
 										<!--new stuff-->
-
-	
+					
 			  </form>			
 	
+			  			<!-- Loading Modal -->
+			<div id="loadModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+				<!-- <span id = "loadModal" class="close">&times;</span> -->
+				<h4>
+					HEX CODE:
+					<br>
+					<br>
+					CMYK:
+					<br>
+					<br>
+					VOLUME:
+					<br>
+				</h4>
+				<div class="loader"></div>
+				</div>
+			</div>
 
 	<!-- <script src="color.js">
 	var r;
@@ -218,6 +239,41 @@
 	}
 	alert(r);
 	</script>  -->
+
+	<script>
+		function convertToCMYK(color){
+		// cmykval= w3color(hexCode, elmnt);
+		// document.getElementById("cmykDisplay").innerHTML = hexCode;
+
+		// color = document.getElementById("color01").value; don't need
+
+		c = w3color(color);
+
+		document.getElementById("cmyk01").innerHTML = c.toCmykString();
+		// document.getElementById("c").innerHTML = c.toCmykC();
+		// document.getElementById("m").innerHTML = c.toCmykM();
+		// document.getElementById("y").innerHTML = c.toCmykY();
+		// document.getElementById("k").innerHTML = c.toCmykK();
+	 	}	
+
+		// function hitSubmit(){
+		// 	var slider = document.getElementById("myRange");
+		// 	var output = document.getElementById("startMyVol");
+		// 	output.innerHTML = slider.value;
+
+		// 	slider.oninput = function() {
+		// 	output.innerHTML = this.value;
+		// 	}
+
+
+		// 	// var output = document.getElementById("startHex");
+		// 	// output.innerHTML = hexCode;
+
+		// 	// c = w3color(hexCode);
+		// 	// document.getElementById("startCmyk01").innerHTML = c.toCmykString();
+
+		// }
+	</script>
 
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="color.js"></script>

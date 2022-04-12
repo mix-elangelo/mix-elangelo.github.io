@@ -34,6 +34,18 @@ w3color.prototype = {
   toCmykString : function () {
     return "cmyk(" + Math.round(this.cyan * 100) + "%, " + Math.round(this.magenta * 100) + "%, " + Math.round(this.yellow * 100) + "%, " + Math.round(this.black * 100) + "%)";
   },
+  toCmykC : function () {
+    return Math.round(this.cyan * 100);
+  },
+  toCmykM : function () {
+    return Math.round(this.magenta * 100);
+  },
+  toCmykY : function () {
+    return Math.round(this.yellow * 100);
+  },
+  toCmykK : function () {
+    return Math.round(this.black * 100);
+  },
   toCmykStringDecimal : function () {
     return "cmyk(" + this.cyan + ", " + this.magenta + ", " + this.yellow + ", " + this.black + ")";
   },

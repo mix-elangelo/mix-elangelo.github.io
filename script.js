@@ -24,6 +24,10 @@ document.getElementById("submitButton").onclick = function() {
     document.getElementById("startModal").style.display = "block";
 }
 
+document.getElementById("startButton").onclick = function() {
+    document.getElementById("loadModal").style.display = "block";
+}
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     document.getElementById("helpModal").style.display = "none";
@@ -53,6 +57,10 @@ window.onclick = function(event) {
 //closes modal when history color is clicked on
 function closeModalWhenHistColClicked(){
     document.getElementById("histModal").style.display = "none";
+}
+
+function closeModalWhenStartClicked(){
+    document.getElementById("startModal").style.display = "none";
 }
 
 //to check color
@@ -89,9 +97,4 @@ output.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
-}
-
-function convertToCMYK(hexCode){
-    document.getElementsByName('cmykDisplay')[0].value= hexCode;
-
 }

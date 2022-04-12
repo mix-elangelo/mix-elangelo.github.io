@@ -534,6 +534,12 @@ margin-top: 76px;
   margin-top: 76px;
   }
 
+  #loadModal .modal-content {
+    width: 25%;
+    height: 42.5%;
+    margin-top: 76px;
+    }
+
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -621,3 +627,18 @@ margin-top: 76px;
   background-color: #FFFFFF;
 }
 
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #a8e063; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin:20px;
+  display:inline-block;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
