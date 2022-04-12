@@ -361,8 +361,6 @@ font-weight: 200;
  text-decoration: none;
 }
 
-
-
 .btn-grad-transparent {
 margin: 10px;
 margin-top: 5px; 
@@ -387,6 +385,32 @@ background-position: right center; /* change the direction of the change here */
 color: #F09819;
 text-decoration: none;
 }
+
+.btn-grad2 {background-image: linear-gradient(to right, #56ab2f 0%, #a8e063  51%, #56ab2f  100%)}
+.btn-grad2 {
+  margin: -5px;
+  padding: 10px 60px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  font-size: 35px;
+ 
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: 300;
+ }
+
+ .btn-grad2:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
 
 .slidecontainer {
 width: 40%;
@@ -503,6 +527,13 @@ margin-left: 23%;
 height: 42.5%;
 margin-top: 76px;
 }
+
+#startModal .modal-content {
+  width: 25%;
+  height: 42.5%;
+  margin-top: 76px;
+  }
+
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -527,6 +558,20 @@ margin-top: 76px;
 
 .close2:hover,
 .close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close3 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;

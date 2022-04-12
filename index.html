@@ -121,34 +121,42 @@
 	
 			<!-- makes the check color box-->
 		<div class = "box" id="box"></div>
+		
+		<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
+			<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+			<br class="mobile-break">
+			<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value); removeImage(); convertToCMYK(hexCode.value);">Check Color</button> 
+			<!-- <input type="button" value = "Check Color" onclick=/> -->
+			
+			<!-- <script> 
+			// Make sure this code gets executed after the DOM is loaded.
+			document.getElementById(hexCode).addEventListener("keyup", event => {
+				if(event.key !== "Return") return; // Use `.key` instead.
+				document.getElementById(checkColor).click(); // Things you want to do.
+				event.preventDefault();
+			});	
+			</script> -->
+		<br>
 
+		<div>
+		<h4 id="cmykDisplay">CMYK: </h4>
 		</div>
-			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
-				<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
-				<br class="mobile-break">
-				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value); removeImage();">Check Color</button> 
-				<!-- <input type="button" value = "Check Color" onclick=/> -->
-				
-				<!-- <script> 
-				// Make sure this code gets executed after the DOM is loaded.
-				document.getElementById(hexCode).addEventListener("keyup", event => {
-					if(event.key !== "Return") return; // Use `.key` instead.
-					document.getElementById(checkColor).click(); // Things you want to do.
-					event.preventDefault();
-				});	
-				</script> -->
-			<br>
 				
 		<div class="slidecontainer">
 		  <input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange" name="volume">
-		  <h4>Volume (mL): <span id="demo"></span></h4>
+		  <h4>Volume (mL): <span id="myVol"></span></h4>
 		</div>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<br>
 				
-				<input type="submit" class="btn-grad">
+							<!--changed type="submit" to-->
+
+				<button type = "button" class="btn-grad" onclick="" id="submitButton">SUBMIT</button>
+				<!-- <input type="submit" class="btn-grad" onclick="" id="submitButton"> before of this^-->
+
+				
 				<!-- <?php 
 				$pop = $_GET['hex'];
 				$fp = fopen('/var/www/html/Values/hexcode.txt','w');
@@ -163,6 +171,30 @@
 				<br> 	
 				<!--<p>HEX CODE: <?php echo $_GET["hex"];?><p>-->
 	
+					<!--new stuff-->
+					<div id="startModal" class="modal">
+						<!-- Modal content -->
+						<div class="modal-content">
+						<span id = "startModal" class="close3">&times;</span>
+						<p>Make sure your hands are clear of the machine, then press start!</p>
+						<h4>
+							<br>
+							HEX CODE:
+							<br>
+							<br>
+							CMYK:
+							<br>
+							<br>
+							VOLUME:
+							<br>
+							<br>
+						</h4>
+						<button type = "button" class="btn-grad2" onclick="" id="startButton">START</button>
+
+						</div>
+					</div>
+										<!--new stuff-->
+
 	
 			  </form>			
 	
@@ -188,5 +220,7 @@
 	</script>  -->
 
 	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="color.js"></script>
+
 		</body>	
 </html>
