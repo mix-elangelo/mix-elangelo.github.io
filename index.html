@@ -46,7 +46,7 @@
 					</h4>
 				</div>
 			</div>
-			
+
 			<!-- Palette History Modal -->
 			<!-- <div id="histModal" class="modal">
 				<div class="modal-content">
@@ -133,8 +133,8 @@
 				<h5>Color 4: </h5>
 				<h5>Volume 4: </h5>
 			</div>
-		
-		
+	
+
 		<div class ="parent">
 			<div class = "child" style ="margin-top:-40px;">
 		<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
@@ -153,13 +153,13 @@
 			</script> -->
 		<br>
 
-		<!-- <div>
+		<div>
 		<h4 id="cmyk01"></h4>
 		<h4 id="c"></h4>
 		<h4 id="m"></h4>
 		<h4 id="y"></h4>
 		<h4 id="k"></h4>
-		</div> -->
+		</div>
 				
 			<div class="slidecontainer">
 			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange" name="volume">
@@ -168,11 +168,16 @@
 		</div>
 
 		<div class ="child" style ="margin-top: -40px;">
-			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
+			<form action="index.html" id ="hexCodeBox2" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode2" name="hex2"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
-				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor2(hexCode2.value); removeImage(); convertToCMYK(hexCode2.value);">Check Color</button> 
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor2(hexCode2.value); removeImage(); convertToCMYK2(hexCode2.value);">Check Color</button> 
 			<br>	
+				<div>
+				<h4 id="c2"></h4>
+				<h4 id="m2"></h4>
+				<h4 id="y2"></h4>
+				</div>
 			<div class="slidecontainer">
 			  <input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange2" name="volume">
 			  <h4>Volume (mL): <span id="myVol2"></span></h4>
@@ -183,22 +188,32 @@
 
 	<div class ="parent">
 		<div class = "child" style ="margin-top: -120px; margin-bottom: -72px;">
-			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
+			<form action="index.html" id ="hexCodeBox3" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode3" name="hex3"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
-				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor3(hexCode3.value); removeImage(); convertToCMYK(hexCode3.value);">Check Color</button> 
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor3(hexCode3.value); removeImage(); convertToCMYK3(hexCode3.value);">Check Color</button> 
 			<br>	
+				<div>
+				<h4 id="c3"></h4>
+				<h4 id="m3"></h4>
+				<h4 id="y3"></h4>
+				</div>
 			<div class="slidecontainer">
 			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange3" name="volume">
 			<h4>Volume (mL): <span id="myVol3"></span></h4>
 			</div>
 		</div>
 		<div class = "child" style ="margin-top: -120px; margin-bottom: -72px;">
-			<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
+			<form action="index.html" id ="hexCodeBox4" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode4" name="hex4"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
-				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor4(hexCode4.value); removeImage(); convertToCMYK(hexCode4.value);">Check Color</button> 
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor4(hexCode4.value); removeImage(); convertToCMYK4(hexCode4.value);">Check Color</button> 
 			<br>	
+				<div>
+				<h4 id="c4"></h4>
+				<h4 id="m4"></h4>
+				<h4 id="y4"></h4>
+				</div>
 			<div class="slidecontainer">
 			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange4" name="volume">
 			<h4>Volume (mL): <span id="myVol4"></span></h4>
@@ -212,8 +227,8 @@
 				
 							<!--changed type="submit" to-->
 
-				<button type = "button" class="btn-grad" onclick="hitSubmit();" id="submitButton">SUBMIT</button>
-				<!-- <input type="submit" class="btn-grad" onclick="" id="submitButton"> before of this^-->
+				<!-- <button type = "button" class="btn-grad" onclick="hitSubmit();" id="submitButton">SUBMIT</button> -->
+				<input type="submit" class="btn-grad" onclick="" id="submitButton"> 
 
 				<!-- $('#button').click(function() {
 					var val1 = $('c').val();
@@ -327,11 +342,41 @@
 		c = w3color(color);
 
 		document.getElementById("cmyk01").innerHTML = c.toCmykString();
-		// document.getElementById("c").innerHTML = c.toCmykC();
-		// document.getElementById("m").innerHTML = c.toCmykM();
-		// document.getElementById("y").innerHTML = c.toCmykY();
-		// document.getElementById("k").innerHTML = c.toCmykK();
+		document.getElementById("c").innerHTML = c.toCmykC();
+		document.getElementById("m").innerHTML = c.toCmykM();
+		document.getElementById("y").innerHTML = c.toCmykY();
+		document.getElementById("k").innerHTML = c.toCmykK();
 	 	}	
+
+
+		 function convertToCMYK2(color){
+
+			c = w3color(color);
+			
+			document.getElementById("c2").innerHTML= c.toCmykC();
+			document.getElementById("m2").innerHTML= c.toCmykM();
+			document.getElementById("y2").innerHTML= c.toCmykY();
+			document.getElementById("k2").innerHTML= c.toCmykK();
+		}	
+		function convertToCMYK3(color){
+
+			c = w3color(color);
+
+			document.getElementById("c3").innerHTML= c.toCmykC();
+			document.getElementById("m3").innerHTML= c.toCmykM();
+			document.getElementById("y3").innerHTML= c.toCmykY();
+			document.getElementById("k3").innerHTML= c.toCmykK();
+		}	
+
+		function convertToCMYK4(color){
+
+			c = w3color(color);
+
+			document.getElementById("c4").value= c.toCmykC();
+			document.getElementById("m4").value= c.toCmykM();
+			document.getElementById("y4").value= c.toCmykY();
+			document.getElementById("k4").value= c.toCmykK();
+		}	
 
 		// function hitSubmit(){
 		// 	var slider = document.getElementById("myRange");
