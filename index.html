@@ -135,7 +135,7 @@
 			</div>
 
 		<div class ="parent">
-			<div class = "child" style ="margin-top:-40px;">
+			<div class = "child" id = "child1">
 		<form action="index.html" id ="hexCodeBox" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 			<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 			<br class="mobile-break">
@@ -162,7 +162,7 @@
 			</div>
 		</div>
 
-		<div class ="child" style ="margin-top: -40px;">
+		<div class ="child" id = "child2">
 			<form action="index.html" id ="hexCodeBox2" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode2" name="hex2"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
@@ -180,7 +180,7 @@
 		
 
 	<div class ="parent">
-		<div class = "child" style ="margin-top: -120px; margin-bottom: -72px;">
+		<div class = "child" id = "child3" >
 			<form action="index.html" id ="hexCodeBox3" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode3" name="hex3"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
@@ -194,14 +194,14 @@
 			<h4>Volume (mL): <span id="myVol3"></span></h4>
 			</div>
 		</div>
-		<div class = "child" style ="margin-top: -120px; margin-bottom: -72px;">
+		<div class = "child" id = "child4">
 			<form action="index.html" id ="hexCodeBox4" method="get"> <!--in Raspberry Pi, it says action="index.php"-->
 				<input type="text" id="hexCode4" name="hex4"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
 				<br class="mobile-break">
 				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor4(hexCode4.value); removeImage(); convertToCMYK4(hexCode4.value);">Check Color</button> 
 			<br>	
 				<div>
-				<h4 id="cmyk04"></h4>
+				<h4 id="cm"></h4>
 				</div>
 			<div class="slidecontainer">
 			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange4" name="volume">

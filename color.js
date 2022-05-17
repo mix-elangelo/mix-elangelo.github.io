@@ -33,6 +33,8 @@ w3color.prototype = {
   },
   toCmykString : function () {
     return "cmyk(" + Math.round(this.cyan * 100) + "%, " + Math.round(this.magenta * 100) + "%, " + Math.round(this.yellow * 100) + "%, " + Math.round(this.black * 100) + "%)";
+    // return Math.round(this.cyan * 100) + ", " + Math.round(this.magenta * 100) + ", " + Math.round(this.yellow * 100);
+
   },
   toCmykC : function () {
     return Math.round(this.cyan * 100);
