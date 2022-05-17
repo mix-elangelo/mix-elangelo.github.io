@@ -20,13 +20,13 @@ document.getElementById("help").onclick = function() {
 //     document.getElementById("histModal").style.display = "block";
 // }
 
-document.getElementById("submitButton").onclick = function() {
-    document.getElementById("startModal").style.display = "block";
-}
+// document.getElementById("submitButton").onclick = function() {
+//     document.getElementById("startModal").style.display = "block";
+// }
 
-document.getElementById("startButton").onclick = function() {
-    document.getElementById("loadModal").style.display = "block";
-}
+// document.getElementById("startButton").onclick = function() {
+//     document.getElementById("loadModal").style.display = "block";
+// }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -63,7 +63,7 @@ function closeModalWhenStartClicked(){
     document.getElementById("startModal").style.display = "none";
 }
 
-//to check color
+//for user to check if right color
 function changeColor(color){
     var newColor = checkHash(color);
     document.getElementsByName('hex')[0].value= newColor;
@@ -91,6 +91,20 @@ function changeColor4(color){
 
     var element = document.getElementById("box");
     element.style.backgroundColor = newColor;	
+}
+
+//to check color box has value
+function isThereAValue(){
+    let text = document.getElementsByName('hex')[0].value;
+    let length = text.length;
+
+    if (text.length==0){
+        document.getElementsByName('hex')[0].value = "none";
+        return false;
+    }
+    else{
+        return true;
+    }
 }
 
 function removeImage(){

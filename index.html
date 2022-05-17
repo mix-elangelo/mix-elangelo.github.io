@@ -122,7 +122,7 @@
 	
 			<!-- makes the check color box-->
 			<div class = "box" id="box"></div>
-			<div class = "child" style ="margin-top:-40px; margin-bottom: -40px">
+			<div class = "child" style ="margin-top:-40px; margin-bottom: -40px;">
 				<!-- <p style = "font-size: medium;">Submitted:</p> -->
 				<h5>Color 1: </h5>
 				<h5>Volume 1: </h5>
@@ -133,7 +133,6 @@
 				<h5>Color 4: </h5>
 				<h5>Volume 4: </h5>
 			</div>
-	
 
 		<div class ="parent">
 			<div class = "child" style ="margin-top:-40px;">
@@ -155,10 +154,6 @@
 
 		<div>
 		<h4 id="cmyk01"></h4>
-		<h4 id="c"></h4>
-		<h4 id="m"></h4>
-		<h4 id="y"></h4>
-		<h4 id="k"></h4>
 		</div>
 				
 			<div class="slidecontainer">
@@ -174,9 +169,7 @@
 				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor2(hexCode2.value); removeImage(); convertToCMYK2(hexCode2.value);">Check Color</button> 
 			<br>	
 				<div>
-				<h4 id="c2"></h4>
-				<h4 id="m2"></h4>
-				<h4 id="y2"></h4>
+				<h4 id="cmyk02"></h4>
 				</div>
 			<div class="slidecontainer">
 			  <input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange2" name="volume">
@@ -194,9 +187,7 @@
 				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor3(hexCode3.value); removeImage(); convertToCMYK3(hexCode3.value);">Check Color</button> 
 			<br>	
 				<div>
-				<h4 id="c3"></h4>
-				<h4 id="m3"></h4>
-				<h4 id="y3"></h4>
+				<h4 id="cmyk03"></h4>
 				</div>
 			<div class="slidecontainer">
 			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange3" name="volume">
@@ -210,9 +201,7 @@
 				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor4(hexCode4.value); removeImage(); convertToCMYK4(hexCode4.value);">Check Color</button> 
 			<br>	
 				<div>
-				<h4 id="c4"></h4>
-				<h4 id="m4"></h4>
-				<h4 id="y4"></h4>
+				<h4 id="cmyk04"></h4>
 				</div>
 			<div class="slidecontainer">
 			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange4" name="volume">
@@ -352,7 +341,7 @@
 		 function convertToCMYK2(color){
 
 			c = w3color(color);
-			
+			document.getElementById("cmyk02").innerHTML = c.toCmykString();
 			document.getElementById("c2").innerHTML= c.toCmykC();
 			document.getElementById("m2").innerHTML= c.toCmykM();
 			document.getElementById("y2").innerHTML= c.toCmykY();
@@ -361,7 +350,7 @@
 		function convertToCMYK3(color){
 
 			c = w3color(color);
-
+			document.getElementById("cmyk03").innerHTML = c.toCmykString();
 			document.getElementById("c3").innerHTML= c.toCmykC();
 			document.getElementById("m3").innerHTML= c.toCmykM();
 			document.getElementById("y3").innerHTML= c.toCmykY();
@@ -371,7 +360,7 @@
 		function convertToCMYK4(color){
 
 			c = w3color(color);
-
+			document.getElementById("cmyk04").innerHTML = c.toCmykString();
 			document.getElementById("c4").value= c.toCmykC();
 			document.getElementById("m4").value= c.toCmykM();
 			document.getElementById("y4").value= c.toCmykY();

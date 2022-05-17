@@ -1,0 +1,323 @@
+<?php
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
+	<head>
+		<title>Mixelangelo</title>
+			<link rel="stylesheet" type="text/css" href="static/main.css"> 
+		</head>
+		<body>
+			
+			<div class="bg-img">
+				<div class="topnav">
+					<!--<img src="Adam.jpeg" class="img-fluid">-->
+					<a href="/">MIXELANGELO</a>
+				</div>	
+			</div>
+
+			<button class = "button" id="help"  onclick="">?</button>
+
+			<button class = "button" id="inkLevels" onclick="location.href='ink.html'"
+			>ink</button>
+
+
+			<!-- Help Modal -->
+			<div id="helpModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+				<span id = "helpModal" class="close">&times;</span>
+				<p>Welcome to Mixelangelo!</p>
+				<h4>To use, please choose one of the 16 pre-picked colors or input a hex code. If you submit a hex code, 
+					 make sure to click on the "Check Color" button to ensure that's the color you want! When you have 
+					 chosen your desired color, decide how much paint you want mixed in that color. Then, hit submit and 
+					 wait for Mixelangelo to make your paint color!
+					 <br>
+					 <br>
+					 TIP: Click on the Palette icon to see past colors you have mixed!
+					
+					</h4>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="blurb">
+					<h1>Pick from these colors or input a hex code below!</h1>
+				</div><!-- /.blurb -->
+			</div><!-- /.container -->
+	
+			<div class = 'parent'>
+			<div class = 'child'>
+			<table id="matrix">
+				<tr>
+					<td><button class="button button1"  onclick="changeColor('#f44136'); removeImage(); insertHexCode('#f44136'); convertToCMYK('#f44136');"> </button></td>
+					<td><button class="button button2"  onclick="changeColor('#ea1d63'); removeImage(); insertHexCode('#ea1d63'); convertToCMYK('#ea1d63');"> </button></td>
+					<td><button class="button button3"  onclick="changeColor('#9d28b1'); removeImage(); insertHexCode('#9d28b1'); convertToCMYK('#9d28b1');"> </button></td>
+					<td><button class="button button4"  onclick="changeColor('#683ab7'); removeImage(); insertHexCode('#683ab7'); convertToCMYK('#683ab7');"> </button></td>
+				</tr>
+			  
+				<tr>
+					<td><button class="button button5"  onclick="changeColor('#3f51b5'); removeImage(); insertHexCode('#3f51b5'); convertToCMYK('#3f51b5');"> </button></td>
+					<td><button class="button button6"  onclick="changeColor('#2197f3'); removeImage(); insertHexCode('#2197f3'); convertToCMYK('#2197f3');"> </button></td>
+					<td><button class="button button7"  onclick="changeColor('#00bcd5'); removeImage(); insertHexCode('#00bcd5'); convertToCMYK('#00bcd5');"> </button></td>
+					<td><button class="button button8"  onclick="changeColor('#009888'); removeImage(); insertHexCode('#009888'); convertToCMYK('#009888');"> </button></td>
+				</tr>
+	
+				<tr>
+					<td><button class="button button9"   onclick="changeColor('#4bb14f'); removeImage(); insertHexCode('#4bb14f'); convertToCMYK('#4bb14f');"> </button></td>
+					<td><button class="button button10"  onclick="changeColor('#8cc24b'); removeImage(); insertHexCode('#8cc24b'); convertToCMYK('#8cc24b');"> </button></td>
+					<td><button class="button button11"  onclick="changeColor('#cddc39'); removeImage(); insertHexCode('#cddc39'); convertToCMYK('#cddc39');"> </button></td>
+					<td><button class="button button12"  onclick="changeColor('#ffeb3d'); removeImage(); insertHexCode('#ffeb3d'); convertToCMYK('#ffeb3d');"> </button></td>
+				</tr>
+	
+				<tr>
+					<td><button class="button button13"  onclick="changeColor('#fec009'); removeImage(); insertHexCode('#fec009'); convertToCMYK('#fec009');"> </button></td>
+					<td><button class="button button14"  onclick="changeColor('#ff9800'); removeImage(); insertHexCode('#ff9800'); convertToCMYK('#ff9800');"> </button></td>
+					<td><button class="button button15"  onclick="changeColor('#795647'); removeImage(); insertHexCode('#795647'); convertToCMYK('#795647');"> </button></td>
+					<td><button class="button button16"  onclick="changeColor('#9e9e9e'); removeImage(); insertHexCode('#9e9e9e'); convertToCMYK('#9e9e9e');"> </button></td>
+				</tr>
+			  </table>
+			</div>
+	
+			<!-- makes the check color box-->
+		<div class = "box" id="box"></div>
+				<div class = "child" style ="margin-top:-40px; margin-bottom: -50px">
+			<h5 style="font-weight:400;">Submitted:</h5>
+			<h5>Color 1: <?php echo $_GET["hex"];?></h5>
+			<h5>Volume 1: <?php echo $_GET["volume"];?> mL</h5>
+			<h5>Color 2: <?php echo $_GET["hex2"];?></h5>
+			<h5>Volume 2: <?php echo $_GET["volume2"];?> mL</h5>
+			<h5>Color 3: <?php echo $_GET["hex3"];?></h5>
+			<h5>Volume 3: <?php echo $_GET["volume3"];?> mL</h5>
+			<h5>Color 4: <?php echo $_GET["hex4"];?></h5>
+			<h5>Volume 4: <?php echo $_GET["volume4"];?> mL</h5>
+
+		</div>
+		
+			<div class ="parent">
+			<div class = "child" style ="margin-top:-40px;">
+		<form action="index.php" id ="hexCodeBox" method="get">
+			<input type="text" id="hexCode" name="hex"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+				<input type="hidden" id="c" name="c" value ="">
+				<input type="hidden" id="m" name= "m" value ="">
+				<input type="hidden" id="y" name ="y" value ="">
+				<input type="hidden" id="k" name ="k" value ="">
+			<br class="mobile-break">
+			<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor(hexCode.value); removeImage(); convertToCMYK(hexCode.value);">Check Color</button> 
+		<br>
+				<div>
+		<h4 id="cmyk01"></h4>
+		<h4 id="c"></h4>
+		<h4 id="m"></h4>
+		<h4 id="y"></h4>
+		<h4 id="k"></h4>
+		</div>
+			<div class="slidecontainer">
+			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange" name="volume">
+			<h4>Volume (mL): <span id="myVol"></span></h4>
+			</div>
+			
+				
+		</div>
+
+		<div class ="child" style ="margin-top: -40px;">
+				<input type="text" id="hexCode2" name="hex2"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+					<input type="hidden" id="c2" name="c2" value ="">
+					<input type="hidden" id="m2" name= "m2" value ="">
+					<input type="hidden" id="y2" name ="y2" value ="">
+					<input type="hidden" id="k2" name ="k2" value ="">
+				<br class="mobile-break">
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor2(hexCode2.value); removeImage(); convertToCMYK2(hexCode2.value);">Check Color</button> 
+			<br>	
+			<div class="slidecontainer">
+			  <input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange2" name="volume2">
+			  <h4>Volume (mL): <span id="myVol2"></span></h4>
+			</div>
+		</div>
+	</div>
+		
+
+	<div class ="parent">
+		<div class = "child" style ="margin-top: -120px; margin-bottom: -72px;">
+				<input type="text" id="hexCode3" name="hex3"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+					<input type="hidden" id="c3" name="c3" value ="">
+					<input type="hidden" id="m3" name="m3" value ="">
+					<input type="hidden" id="y3" name="y3" value ="">
+					<input type="hidden" id="k3" name="k3" value ="">
+				<br class="mobile-break">
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor3(hexCode3.value); removeImage(); convertToCMYK3(hexCode3.value);">Check Color</button> 
+			<br>	
+			<div class="slidecontainer">
+			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange3" name="volume3">
+			<h4>Volume (mL): <span id="myVol3"></span></h4>
+			</div>
+		</div>
+		<div class = "child" style ="margin-top: -120px; margin-bottom: -72px;">
+				<input type="text" id="hexCode4" name="hex4"  placeholder="HEX CODE" maxlength="7" style="text-transform:uppercase">
+					<input type="hidden" id="c4" name="c4" value ="">
+					<input type="hidden" id="m4" name="m4" value ="">
+					<input type="hidden" id="y4" name="y4" value ="">
+					<input type="hidden" id="k4" name="k4" value ="">	
+				<br class="mobile-break">
+				<button id = "checkColor" type = "button" class="btn-grad-transparent" onclick="changeColor4(hexCode4.value); removeImage(); convertToCMYK4(hexCode4.value);">Check Color</button> 
+			<br>	
+			<div class="slidecontainer">
+			<input type="range" min="7" max="14.8" value="14.8" class="slider" step = "0.2" id="myRange4" name="volume4">
+			<h4>Volume (mL): <span id="myVol4"></span></h4>
+			</div>
+		</div>
+	</div>
+
+				<input type="submit" id ="submitButton" class="btn-grad" onclick="convertToCMYK(hexCode.value);convertToCMYK2(hexCode2.value);convertToCMYK3(hexCode3.value);convertToCMYK4(hexCode4.value);" id="submitButton">
+
+				<?php
+   
+				$pop = $_GET['hex'];
+				$fp = fopen('/var/www/html/Values/hexcode.txt','w');
+				fwrite($fp,$pop);
+				fclose($fp);
+				
+				$pep = $_GET['volume'];
+				$fp = fopen('/var/www/html/Values_2/volume1.txt','w');
+				fwrite($fp,$pep);
+				fclose($fp);
+				
+				$pup = $_GET['cmyk01'];
+				$fp = fopen('/var/www/html/Values/color1.txt','w');
+				fwrite($fp,$pup);
+				fclose($fp);
+				
+				$pip = $_GET['c'];
+				$fp = fopen('/var/www/html/Values_2/cyan1.txt','w');
+				fwrite($fp,$pip);
+				fclose($fp);
+				
+				$pip2 = $_GET['m'];
+				$fp = fopen('/var/www/html/Values_2/magenta1.txt','w');
+				fwrite($fp,$pip2);
+				fclose($fp);
+				
+				$pip3 = $_GET['y'];
+				$fp = fopen('/var/www/html/Values_2/yellow1.txt','w');
+				fwrite($fp,$pip3);
+				fclose($fp);
+				
+				$qip = $_GET['c2'];
+				$fp = fopen('/var/www/html/Values_2/cyan2.txt','w');
+				fwrite($fp,$qip);
+				fclose($fp);
+				
+				$qip2 = $_GET['m2'];
+				$fp = fopen('/var/www/html/Values_2/magenta2.txt','w');
+				fwrite($fp,$qip2);
+				fclose($fp);
+				
+				$qip3 = $_GET['y2'];
+				$fp = fopen('/var/www/html/Values_2/yellow2.txt','w');
+				fwrite($fp,$qip3);
+				fclose($fp);
+				
+				$rip = $_GET['c3'];
+				$fp = fopen('/var/www/html/Values_2/cyan3.txt','w');
+				fwrite($fp,$rip);
+				fclose($fp);
+				
+				$rip2 = $_GET['m3'];
+				$fp = fopen('/var/www/html/Values_2/magenta3.txt','w');
+				fwrite($fp,$rip2);
+				fclose($fp);
+				
+				$rip3 = $_GET['y3'];
+				$fp = fopen('/var/www/html/Values_2/yellow3.txt','w');
+				fwrite($fp,$rip3);
+				fclose($fp);
+				
+				$sip = $_GET['c4'];
+				$fp = fopen('/var/www/html/Values_2/cyan4.txt','w');
+				fwrite($fp,$sip);
+				fclose($fp);
+				
+				$sip2 = $_GET['m4'];
+				$fp = fopen('/var/www/html/Values_2/magenta4.txt','w');
+				fwrite($fp,$sip2);
+				fclose($fp);
+				
+				$sip3 = $_GET['y4'];
+				$fp = fopen('/var/www/html/Values_2/yellow4.txt','w');
+				fwrite($fp,$sip3);
+				fclose($fp);
+				
+				$fp = fopen('/var/www/html/Values/sf.txt','w');
+				fwrite($fp,"on");
+				fclose($fp);
+				?>
+				<br> 	
+				<?php echo $_GET["cmyk01"];?>
+				<p>C: <?php echo $_GET["c"];?><p>
+				<p>M: <?php echo $_GET["m"];?><p>
+				<p>Y: <?php echo $_GET["y"];?><p>
+	
+	</form>
+	<script>
+		function convertToCMYK(color){
+
+		col = w3color(color);
+
+		document.getElementById("cmyk01").innerHTML = col.toCmykString();
+		document.getElementById("c").innerHTML = col.toCmykC();
+		document.getElementById("m").innerHTML = col.toCmykM();
+		document.getElementById("y").innerHTML = col.toCmykY();
+		document.getElementById("k").innerHTML = col.toCmykK();
+		
+		document.getElementById("c").value= col.toCmykC();
+		document.getElementById("m").value= col.toCmykM();
+		document.getElementById("y").value= col.toCmykY();
+		document.getElementById("k").value= col.toCmykK();
+	 	}	
+	 	
+	 	function convertToCMYK2(color){
+
+			c = w3color(color);
+			document.getElementById("c2").innerHTML = c.toCmykC();
+			document.getElementById("m2").innerHTML = c.toCmykM();
+			document.getElementById("y2").innerHTML = c.toCmykY();
+			document.getElementById("k2").innerHTML = c.toCmykK();
+			document.getElementById("c2").value= c.toCmykC();
+			document.getElementById("m2").value= c.toCmykM();
+			document.getElementById("y2").value= c.toCmykY();
+			document.getElementById("k2").value= c.toCmykK();
+		}	
+		function convertToCMYK3(color){
+
+			c = w3color(color);
+			document.getElementById("c3").innerHTML = c.toCmykC();
+			document.getElementById("m3").innerHTML = c.toCmykM();
+			document.getElementById("y3").innerHTML = c.toCmykY();
+			document.getElementById("k3").innerHTML = c.toCmykK();
+			document.getElementById("c3").value= c.toCmykC();
+			document.getElementById("m3").value= c.toCmykM();
+			document.getElementById("y3").value= c.toCmykY();
+			document.getElementById("k3").value= c.toCmykK();
+		}	
+
+		function convertToCMYK4(color){
+
+			c = w3color(color);
+			document.getElementById("c4").innerHTML = c.toCmykC();
+			document.getElementById("m4").innerHTML = c.toCmykM();
+			document.getElementById("y4").innerHTML = c.toCmykY();
+			document.getElementById("k4").innerHTML = c.toCmykK();
+			document.getElementById("c4").value= c.toCmykC();
+			document.getElementById("m4").value= c.toCmykM();
+			document.getElementById("y4").value= c.toCmykY();
+			document.getElementById("k4").value= c.toCmykK();
+		}	
+	</script>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="static/color.js"></script>
+
+		</body>	
+</html>
